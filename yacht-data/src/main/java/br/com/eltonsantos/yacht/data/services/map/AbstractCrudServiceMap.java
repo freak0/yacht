@@ -19,7 +19,7 @@ public abstract class AbstractCrudServiceMap<T extends BaseEntity, ID extends Se
     }
 
     public Optional<T> findById(ID id) {
-        return Optional.of(this.map.get(id));
+        return Optional.ofNullable(this.map.get(id));
     }
 
     public void deleteById(ID id) {
