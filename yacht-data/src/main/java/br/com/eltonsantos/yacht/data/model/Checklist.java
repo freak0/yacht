@@ -8,6 +8,7 @@ public class Checklist extends BaseEntity {
     private String name;
     private LocalDate dueDate;
     private String notes;
+    private ChecklistGroup group;
 
     private List<Task> tasks;
 
@@ -41,5 +42,13 @@ public class Checklist extends BaseEntity {
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public ChecklistGroup getGroup() {
+        return group;
+    }
+
+    public void setGroup(ChecklistGroup group) {
+        this.group = group;
     }
 }
