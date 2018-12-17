@@ -17,7 +17,7 @@
     
     <groupId>br.com.eltonsantos</groupId>
     <artifactId>yacht</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>yacht</name>
     <description>Yet Another Checklist Tool</description>
 
@@ -97,7 +97,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:freak0/yacht.git</developerConnection>
-      <tag>yacht-0.0.1</tag>
+      <tag>0.0.1</tag>
   </scm>
 
     <repositories>
