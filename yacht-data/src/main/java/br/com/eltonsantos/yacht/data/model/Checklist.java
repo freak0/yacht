@@ -15,8 +15,7 @@ public class Checklist extends BaseEntity {
     public Checklist() {
     }
 
-    public Checklist(Long id, String name, LocalDate dueDate) {
-        this.setId(id);
+    public Checklist(String name, LocalDate dueDate) {
         this.name = name;
         this.dueDate = dueDate;
     }

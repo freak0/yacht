@@ -2,15 +2,19 @@ package br.com.eltonsantos.yacht.data.services.map;
 
 import br.com.eltonsantos.yacht.data.model.BaseEntity;
 
-import java.io.Serializable;
 import java.util.*;
 
-public abstract class AbstractCrudServiceMap<T extends BaseEntity, ID extends Serializable> {
+public abstract class AbstractCrudServiceMap<T extends BaseEntity, ID extends Long> {
 
-    private final Map<ID, T> map = new HashMap<>();
+    private final Map<Long, T> map = new HashMap<>();
 
-    protected T save(ID id, T object) {
-        this.map.put(id, object);
+    public T save(T object) {
+        if (object != null) {
+            if (object.getId() == null) {
+                object.setId(getNextId());
+            }
+        }
+        this.map.put(object.getId(), object);
         return object;
     }
 
@@ -28,6 +32,14 @@ public abstract class AbstractCrudServiceMap<T extends BaseEntity, ID extends Se
 
     public void delete(T object) {
         this.map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+    }
+
+    private Long getNextId() {
+        if (this.map.size() == 0) {
+            return 1L;
+        }
+
+        return Collections.max(this.map.keySet()) + 1;
     }
 
 }

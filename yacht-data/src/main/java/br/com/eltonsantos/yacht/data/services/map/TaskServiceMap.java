@@ -7,8 +7,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class TaskServiceMap extends AbstractCrudServiceMap<Task, Long> implements TaskService {
 
-    @Override
-    public Task save(Task task) {
-        return super.save(task.getId(), task);
-    }
 }

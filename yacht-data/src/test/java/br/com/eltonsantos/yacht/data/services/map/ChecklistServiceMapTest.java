@@ -21,16 +21,16 @@ class ChecklistServiceMapTest {
     @BeforeEach
     void setUp() {
         this.cut = new ChecklistServiceMap();
-        this.cut.save(new Checklist(1L, "Create tests", LocalDate.of(2018, DECEMBER, 17)));
-        this.cut.save(new Checklist(2L, "Create more tests", LocalDate.of(2018, DECEMBER, 18)));
-        this.cut.save(new Checklist(3L, "Create the actual code", LocalDate.of(2018, DECEMBER, 19)));
+        this.cut.save(new Checklist("Create tests", LocalDate.of(2018, DECEMBER, 17)));
+        this.cut.save(new Checklist("Create more tests", LocalDate.of(2018, DECEMBER, 18)));
+        this.cut.save(new Checklist("Create the actual code", LocalDate.of(2018, DECEMBER, 19)));
     }
 
     @Test
     @DisplayName("When I save a new Checklist, check if its saved using its ID to find it.")
     void save() {
         //when:
-        Checklist checklist = new Checklist(4L, "Merry Xmas", XMAS_DATE);
+        Checklist checklist = new Checklist("Merry Xmas", XMAS_DATE);
         Checklist returnedChecklist = this.cut.save(checklist);
 
         //and:

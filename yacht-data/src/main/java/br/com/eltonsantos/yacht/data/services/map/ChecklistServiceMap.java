@@ -7,9 +7,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChecklistServiceMap extends AbstractCrudServiceMap<Checklist, Long> implements ChecklistService {
 
-    @Override
-    public Checklist save(Checklist checklist) {
-        return super.save(checklist.getId(), checklist);
-    }
-
 }
